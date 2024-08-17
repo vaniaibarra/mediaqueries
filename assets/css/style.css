@@ -1,0 +1,183 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    text-decoration: none;
+    list-style: none;
+}
+.navbar{
+    background-color: #cb7287;
+}
+
+nav ul li a{
+    color: white;
+}
+li a.active, li a:hover{
+    border-radius: 5px;
+    background: #efe4dc;
+    transition: .5s;
+}
+.checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+.Logo{
+    border: 2px solid white;
+    float: left;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.order{
+    display: flex;
+    flex-direction: column;
+    background-color: #d1a481;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+.footer{
+    background-color: #fab4a4;
+    color: white;
+    text-align: center;
+}
+ul{
+    padding-top: 3rem;
+    font-size: large;
+}
+li{
+    padding: 5px;
+}
+.pagination{
+    display: inline-block;
+    text-align: center;
+  }
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+  
+  .pagination a.active {
+    background-color: #fab4a4;
+    color: white;
+    border-radius: 5px;
+  }
+  
+  .pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+@media (max-width: 576px){
+    body{
+        .fullscreen{
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: 6vh 6vh 83vh 5vh;
+        
+        }
+        .main{
+            display: grid;
+            overflow: scroll;
+            gap: 20px;
+            justify-items: center;
+            padding: 5px;
+        }
+        .card{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 200px;
+            border: 2px solid black;
+        }
+        .card img{
+            width: 100%;
+            border: 2px solid black;
+        }
+        .navbar{
+            width: 100vw;
+        }
+        .checkbtn{
+            display: block;
+            margin-top: 5px;
+            margin-right: 7px;
+        }
+        ul{
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background-color: #fab4a4;
+            top: 80px;
+            left: -100%;
+            text-align: center;
+            transition: all .5s;
+
+        }
+        nav ul li{
+            display: block;   
+        }
+        #check:checked ~ ul{
+            left: 0;
+        }
+        .Logo{
+            margin-top: 7px;
+            margin-left: 7px;
+        }
+    }
+}
+@media (min-width: 577px){
+    body{
+        .fullscreen{
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 0.5fr 3fr;
+            grid-template-areas: 
+            'navbar order'
+            'navbar main'
+            'footer main';
+        }
+        .navbar{
+            grid-area: navbar;
+            display: flex;
+            justify-content: center;
+            align-content: space-between ;
+            padding: 2rem;
+
+        }
+        .order{
+            grid-area: order;
+            height: 100px;
+        }
+        .main{
+            padding: 50px;
+            display: grid;
+            grid-area: main;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            overflow: scroll;
+            justify-items: center;
+        }
+        .footer{
+            grid-area: footer;
+        }
+        .card{
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+            align-items: center;
+            border: 2px solid black;
+        }
+        .card img{
+            width: 100%;
+            border: 2px solid black;
+        }
+    }
+}
